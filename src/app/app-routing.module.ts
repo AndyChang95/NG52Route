@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { PostComponent } from './post/post.component';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'post', component: PostComponent },
+  { path: 'login', loadChildren: 'app/login/login.module#LoginModule' },
+  { path: 'post', loadChildren: 'app/post/post.module#PostModule' },
   { path: '', redirectTo: '', pathMatch: 'full'}
 ];
 
